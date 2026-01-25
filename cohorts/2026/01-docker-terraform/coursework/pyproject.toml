@@ -1,0 +1,23 @@
+[project]
+name = "hw1"
+version = "0.1.0"
+description = "Homework 1"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pgcli>=4.4.0",
+    "psycopg-binary>=3.3.2",
+    "psycopg2-binary>=2.9.11",
+    "sqlalchemy>=2.0.45",
+    "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = [
+    "click>=8.1.7",
+    "jupyter>=1.1.1",
+    "pandas>=2.3.3",
+    "pgcli>=4.4.0",
+    "pyarrow>=22.0.0",
+    "requests>=2.32.5",
+]

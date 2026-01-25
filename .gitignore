@@ -17,3 +17,6 @@ serving_dir
 *.parquet
 *.csv
 *.duckdb
+
+# Local files
+scratch/**

@@ -1,0 +1,55 @@
+id: 06_gcp_kv_inputs
+namespace: zoomcamp
+description: |
+  A modified version of 06_gcp_kv that uses inputs to set GCP parameters.
+  This allows for easier customization when running the flow.
+
+inputs:
+  - id: inp_gcp_project_id
+    type: STRING
+    displayName: Write your GCP Project ID
+    description: The GCP Project ID where resources will be created
+    defaults: kestra-sandbox
+
+  - id: inp_gcp_location
+    type: STRING
+    displayName: Write your GCP Location
+    description: The GCP Location where resources will be created
+    defaults: europe-west2
+
+  - id: inp_gcp_bucket_name
+    type: STRING
+    displayName: Write your GCP Bucket Name
+    description: The GCP Bucket Name where resources will be created (make sure it's globally unique!)
+    defaults: your-name-kestra
+
+  - id: inp_gcp_dataset
+    type: STRING
+    displayName: Write your GCP BigQuery Dataset Name
+    description: The GCP BigQuery Dataset Name where resources will be created
+    defaults: zoomcamp
+
+tasks:
+  - id: gcp_project_id
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_PROJECT_ID
+    kvType: STRING
+    value: "{{inputs.inp_gcp_project_id}}"
+
+  - id: gcp_location
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_LOCATION
+    kvType: STRING
+    value: "{{inputs.inp_gcp_location}}"
+
+  - id: gcp_bucket_name
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_BUCKET_NAME
+    kvType: STRING
+    value: "{{inputs.inp_gcp_bucket_name}}"
+
+  - id: gcp_dataset
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_DATASET
+    kvType: STRING
+    value: "{{inputs.inp_gcp_dataset}}"

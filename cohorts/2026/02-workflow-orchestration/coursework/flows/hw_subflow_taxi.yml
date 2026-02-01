@@ -1,0 +1,59 @@
+id: subflow_taxi
+namespace: zoomcamp
+description: |
+  Run 08_gcp_taxi over a range of months for a given taxi type and year.
+
+inputs:
+  - id: taxi
+    type: MULTISELECT
+    displayName: Select taxi type
+    values: [yellow, green]
+    defaults:
+      - yellow
+      - green
+
+  - id: year
+    type: MULTISELECT
+    displayName: Select year
+    values: ["2019", "2020", "2021"]
+    defaults:
+      - "2021"
+    allowCustomValue: true
+
+  - id: month
+    type: MULTISELECT
+    displayName: Select month
+    values:
+      ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
+    defaults:
+      - "01"
+      - "02"
+      - "03"
+      - "04"
+      - "05"
+      - "06"
+      - "07"
+
+tasks:
+  - id: taxi_loop
+    type: io.kestra.plugin.core.flow.ForEach
+    values: "{{inputs.taxi}}"
+    tasks:
+      - id: year_loop
+        type: io.kestra.plugin.core.flow.ForEach
+        values: "{{inputs.year}}"
+        tasks:
+          - id: month_loop
+            type: io.kestra.plugin.core.flow.ForEach
+            values: "{{inputs.month}}"
+            tasks:
+              - id: run_taxi_flow
+                type: io.kestra.plugin.core.flow.Subflow
+                namespace: zoomcamp
+                flowId: 08_gcp_taxi
+                inputs:
+                  taxi: "{{parents[1].taskrun.value}}"
+                  year: "{{parents[0].taskrun.value}}"
+                  month: "{{taskrun.value}}"
+                wait: true
+                transmitFailed: true

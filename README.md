@@ -13,10 +13,12 @@ Find the readme for the upstream repository [here](README_zoomcamp.md).
 
 Find relevant course work [cohorts](cohorts/2026) directory:
 - [Module 1](cohorts/2026/01-docker-terraform/coursework/)
+- [Module 2](cohorts/2026/02-workflow-orchestration/coursework/)
 - Other modules TBD
 
 # Homework
 
 Find the answers to the homeworks under the [cohorts](cohorts/2026) directory:
 - [Homework 1](cohorts/2026/01-docker-terraform/answers.md)
+- [Homework 2](cohorts/2026/02-workflow-orchestration/answers.md)
 - Other homeworks TBD

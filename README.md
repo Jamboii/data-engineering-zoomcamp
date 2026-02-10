@@ -14,6 +14,7 @@ Find the readme for the upstream repository [here](README_zoomcamp.md).
 Find relevant course work [cohorts](cohorts/2026) directory:
 - [Module 1](cohorts/2026/01-docker-terraform/coursework/)
 - [Module 2](cohorts/2026/02-workflow-orchestration/coursework/)
+- [Module 3](cohorts/2026/03-data-warehouse/coursework/)
 - Other modules TBD
 
 # Homework
@@ -21,4 +22,5 @@ Find relevant course work [cohorts](cohorts/2026) directory:
 Find the answers to the homeworks under the [cohorts](cohorts/2026) directory:
 - [Homework 1](cohorts/2026/01-docker-terraform/answers.md)
 - [Homework 2](cohorts/2026/02-workflow-orchestration/answers.md)
+- [Homework 3](cohorts/2026/03-data-warehouse/answers.md/)
 - Other homeworks TBD

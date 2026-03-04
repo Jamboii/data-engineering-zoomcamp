@@ -1,0 +1,10 @@
+[project]
+name = "taxi-pipeline"
+version = "0.1.0"
+description = "Sample Taxi Pipeline using dlt for Zoomcamp workshop 1"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["dlt[workspace]>=1.22.2"]
+
+[dependency-groups]
+dev = ["ipykernel>=7.2.0", "ipywidgets>=8.1.8"]

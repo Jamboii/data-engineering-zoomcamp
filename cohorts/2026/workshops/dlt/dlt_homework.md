@@ -153,24 +153,58 @@ We challenge you to try out the different methods explored in the workshop when 
 ### Question 1: What is the start date and end date of the dataset?
 
 - 2009-01-01 to 2009-01-31
-- 2009-06-01 to 2009-07-01
+- **2009-06-01 to 2009-07-01**
 - 2024-01-01 to 2024-02-01
 - 2024-06-01 to 2024-07-01
+
+#### explanation
+
+```sql
+SELECT min(trip_pickup_date_time), max(trip_dropoff_date_time) from nyc_taxi
+```
+
+```
+2009-06-01 11:33:00+00:00
+2009-07-01 00:03:00+00:00
+```
 
 ### Question 2: What proportion of trips are paid with credit card?
 
 - 16.66%
-- 26.66%
+- **26.66%**
 - 36.66%
 - 46.66%
+
+#### explanation
+
+```sql
+select 
+  count(*) filter (where payment_type = 'Credit') / (count(*)) * 100.0
+from nyc_taxi
+```
+
+```
+26.66
+```
 
 ### Question 3: What is the total amount of money generated in tips?
 
 - $4,063.41
-- $6,063.41
+- **$6,063.41**
 - $8,063.41
 - $10,063.41
 
+#### explanation
+
+```sql
+select 
+  round(sum(tip_amt), 2)
+from nyc_taxi
+```
+
+```
+6,063.41
+```
 
 ### Resources
 

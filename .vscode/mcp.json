@@ -2,7 +2,22 @@
   "servers": {
     "bruin": {
       "command": "bruin",
-      "args": ["mcp"]
+      "args": [
+        "mcp"
+      ]
+    },
+    "dlt": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "dlt[duckdb]",
+        "--with",
+        "dlt-mcp[search]",
+        "python",
+        "-m",
+        "dlt_mcp"
+      ]
     }
   }
 }

@@ -19,7 +19,7 @@ Find relevant course work [cohorts](cohorts/2026) directory:
 - [Module 5](cohorts/2026/05-data-platforms/coursework/)
 - [Workshop](cohorts/2026/workshops)
 - [Module 6](cohorts/2026/06-batch/coursework/)
-- Other modules TBD
+- [Module 7](cohorts/2026/07-streaming/coursework/)
 
 # Homework
 
@@ -31,4 +31,4 @@ Find the answers to the homeworks under the [cohorts](cohorts/2026) directory:
 - [Homework 5](cohorts/2026/05-data-platforms/answers.md)
 - [Workshop](cohorts/2026/workshops/dlt/dlt_homework.md)
 - [Homework 6](cohorts/2026/06-batch/answers.md)
-- Other homeworks TBD
+- [Homework 7](cohorts/2026/07-streaming/answers.md)

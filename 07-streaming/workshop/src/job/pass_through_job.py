@@ -3,7 +3,7 @@ from pyflink.table import EnvironmentSettings, StreamTableEnvironment
 
 
 def create_processed_events_sink_postgres(t_env):
-    table_name = 'processed_events'
+    table_name = "processed_events"
     sink_ddl = f"""
         CREATE TABLE {table_name} (
             PULocationID INTEGER,
@@ -45,9 +45,11 @@ def create_events_source_kafka(t_env):
     t_env.execute_sql(source_ddl)
     return table_name
 
+
 def log_processing():
     # Set up the execution environment
     env = StreamExecutionEnvironment.get_execution_environment()
+    # Take snapshot of the job state every 10 seconds
     env.enable_checkpointing(10 * 1000)
 
     # Set up the table environment
@@ -75,5 +77,5 @@ def log_processing():
         print("Writing records from Kafka to JDBC failed:", str(e))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     log_processing()
